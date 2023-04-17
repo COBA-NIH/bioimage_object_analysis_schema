@@ -1,0 +1,7 @@
+{
+    "short_name":"3D",
+    "full_name":"Are your images 3D?",
+    "select_all":false,
+    "long_description":"Some long description around 3D. Make sure to mention this should be no if you've already Z projected",
+    "options":["Yes", "No", "Yes, but I wish to Z project them before proceeding"]
+}
