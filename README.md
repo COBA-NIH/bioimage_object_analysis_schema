@@ -1,0 +1,1 @@
+# bioimage_object_analysis_schema
