@@ -1,7 +1,14 @@
 {
+    "index":1,
     "short_name":"3D",
     "full_name":"Are your images 3D?",
     "select_all":false,
-    "long_description":"Some long description around 3D. Make sure to mention this should be no if you've already Z projected",
-    "options":["Yes", "No", "Yes, but I wish to Z project them before proceeding"]
+    "slider":false,
+    "long_description":"Whether or not the images you wish to analyze are 3D.",
+    "section":"image",
+    "changes_based_on_3d":false,
+    "options":{
+        "Yes":"You said your images are 3D. Please make sure to select this in the NamesAndTypes module", 
+        "No":"You said your images are 2D. Please make sure to select this in the NamesAndTypes module", 
+        "Yes, but I wish to Z project them before proceeding":"You said your images are 3D but need projection. Please first run a pipeline to project them (a written and video demo are available [here](https://forum.image.sc/t/input-modules-tutorial/63911#h-3d-processing-4814-6)). Once these are created, the now-2D projections can be used in their own CellProfiler pipeline."}
 }
