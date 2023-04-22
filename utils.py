@@ -6,7 +6,7 @@ def load_schema(from_master = True, rewrite_master = False, master_file = 'jsons
     if from_master:
         master_schema_dict = json.load(open(master_file))
     else:
-        json_q_dict = {json.load(open(x))['index']:json.load(open(x)) for x in os.listdir('.') if '.json' in x if 'master_schema' not in x}
+        json_q_dict = {json.load(open(f"jsons/{x}"))['index']:json.load(open(f"jsons/{x}")) for x in os.listdir('jsons') if '.json' in x if 'master_schema' not in x}
         count_list = list(json_q_dict.keys()) 
         count_list = [x for x in count_list if x >= 0] #allow for dummy files with an index of -1
         count_list.sort()

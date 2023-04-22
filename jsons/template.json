@@ -9,12 +9,18 @@
     "changes_based_on_3d":true,
     "options":{
         "a":{
-            "3D_False":"",
-            "3D_True":""
+            "cellprofiler_suggester":
+            {
+                "3D_False":"",
+                "3D_True":""
+            }
         },
         "b":{
-            "3D_False":"",
-            "3D_True":""
+            "cellprofiler_suggester":
+            {
+                "3D_False":"",
+                "3D_True":""
+            }
         }
     }
 }
