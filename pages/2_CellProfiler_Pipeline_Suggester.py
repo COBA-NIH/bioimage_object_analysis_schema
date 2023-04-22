@@ -32,6 +32,8 @@ for eachcount in count_list:
 
 is_3D = setting_dict[is_3D_question] == "Yes"
 
+by_name_dict = {json_q_dict[x]['full_name']:setting_dict[x] for x in count_list}
+st.download_button('Download my answers as a json file',json.dumps(by_name_dict),'dataset_description.json')
 
 def follow_answer_tree(json_q_dict,eachkey,setting_dict,is_3D):
     if json_q_dict[eachkey]["changes_based_on_3d"]:
