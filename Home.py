@@ -24,4 +24,8 @@ Made by Beth Cimini, Broad Institute, 2023
 import json
 import streamlit as st
 
+from utils import load_schema
+
+load_schema(from_master=False,rewrite_master=True)
+
 st.write(json.load(open('jsons/master_schema_short.json')))

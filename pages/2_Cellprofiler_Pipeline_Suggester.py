@@ -7,7 +7,7 @@ import streamlit as st
 sys.path.append('..')
 from bioimage_object_analysis_schema.utils import load_schema
 
-json_q_dict = load_schema(from_master=False,rewrite_master=True)
+json_q_dict = load_schema(from_master=True,rewrite_master=False)
 count_list = count_list = list(json_q_dict.keys())
 
 setting_dict = {}
