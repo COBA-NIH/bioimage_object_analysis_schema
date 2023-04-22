@@ -15,10 +15,11 @@ Embed in webpage rather than webpage forwarding - https://giswqs.medium.com/add-
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
 
 This is the part of the schema currently loaded into our "CellProfiler Suggester" tool; stay tuned for more updates.
+The whole schema is currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
 
 Last updated - April 22, 2023
 
-Made by Beth Cimini, Broad Institute
+Made by Beth Cimini, Broad Institute, 2023
 """
 import json
 import streamlit as st
