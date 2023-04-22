@@ -1,0 +1,24 @@
+{
+    "index":19,
+    "short_name":"meas_other_objects",
+    "full_name":"Measurements requring other objects and/or image context (select all that apply)",
+    "select_all":true,
+    "slider":false,
+    "long_description":"Measurements that don't come from just the object being measured, but from its relationship to some other object. This might be an object of the same kind (such as a cell's distance to its closest cell) OR a different kind of object (such as the number of speckles inside a nucleus)",
+    "section":"measurement",
+    "changes_based_on_3d":true,
+    "options":{
+        "Count of parent/child objects of a different type":{
+            "3D_False":"To measure the count of parent/child objects of a different type, once both kinds of objects (the larger 'parent' objects and the smaller 'child' objects have been found), use the RelateObjects module to connect them. If you want to calculate per-parent means (ie if you want to know in each nucleus, what is the average speckle area), make sure to put RelateObjects AFTER your measurement modules",
+            "3D_True":"To measure the count of parent/child objects of a different type, once both kinds of objects (the larger 'parent' objects and the smaller 'child' objects have been found), use the RelateObjects module to connect them. If you want to calculate per-parent means (ie if you want to know in each nucleus, what is the average speckle area), make sure to put RelateObjects AFTER your measurement modules"
+        },
+        "Distance to/overlap with other objects of same type":{
+            "3D_False":"You said you wanted to measure distance to and/or overlap with other objects of the same type. CellProfiler only supports direct object overlap under certain circumstances, such as the UntangleWorms module, and doesn't currently have a good way of measuring it. If you want to calculate distance, you can use the MeasureObjectNeighbors module",
+            "3D_True":"You said you wanted to measure distance to and/or overlap with other objects of the same type. CellProfiler currently doesn't support object overlap in 3D. If you want to calculate distance, you can use the MeasureObjectNeighbors module"
+        },
+        "Distance to/overlap with other objects of a different type":{
+            "3D_False":"You said you wanted to measure distance to and/or overlap with another kind of object. This can be measured with the MeasureObjectNeighbors module and/or the MeasureObjectOverlap module",
+            "3D_True":"You said you wanted to measure distance to and/or overlap with another kind of object. Unfortunately, CellProfiler currently doesn't calculate object overlap in 3D. If you want to calculate distance, you can use the MeasureObjectNeighbors module"
+        }
+    }
+}

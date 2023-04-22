@@ -35,13 +35,27 @@ is_3D = setting_dict[is_3D_question] == "Yes"
 for eachkey in setting_dict.keys():
     if json_q_dict[eachkey]["section"] == 'image':
         if json_q_dict[eachkey]["changes_based_on_3d"]:
-            answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]][f"3D_{is_3D}"]
-            if answer: #just don't show anything if we haven't written the rec yet
-                st.write(answer)
+            if type(setting_dict[eachkey]) == list:
+                for eachsubkey in setting_dict[eachkey]:
+                    answer = json_q_dict[eachkey]['options'][eachsubkey][f"3D_{is_3D}"]
+                    if answer:#just don't show anything if we haven't written the rec yet
+                        st.write(answer)
+            else:
+                answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]][f"3D_{is_3D}"]
+                if answer: #just don't show anything if we haven't written the rec yet
+                    st.write(answer)              
+
         else:
-            answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]]
-            if answer: #just don't show anything if we haven't written the rec yet
-                st.write(answer)
+            if type(setting_dict[eachkey]) == list:
+                for eachsubkey in setting_dict[eachkey]:
+                    answer = json_q_dict[eachkey]['options'][eachsubkey]
+                    if answer:#just don't show anything if we haven't written the rec yet
+                        st.write(answer)
+            else:
+                answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]]
+                if answer: #just don't show anything if we haven't written the rec yet
+                    st.write(answer)       
+
 """
 ## CellProfiler pipeline recommendations - object specifications
 """
@@ -49,13 +63,26 @@ for eachkey in setting_dict.keys():
 for eachkey in setting_dict.keys():
     if json_q_dict[eachkey]["section"] == 'object':
         if json_q_dict[eachkey]["changes_based_on_3d"]:
-            answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]][f"3D_{is_3D}"]
-            if answer: #just don't show anything if we haven't written the rec yet
-                st.write(answer)
+            if type(setting_dict[eachkey]) == list:
+                for eachsubkey in setting_dict[eachkey]:
+                    answer = json_q_dict[eachkey]['options'][eachsubkey][f"3D_{is_3D}"]
+                    if answer:#just don't show anything if we haven't written the rec yet
+                        st.write(answer)
+            else:
+                answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]][f"3D_{is_3D}"]
+                if answer: #just don't show anything if we haven't written the rec yet
+                    st.write(answer)              
+
         else:
-            answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]]
-            if answer: #just don't show anything if we haven't written the rec yet
-                st.write(answer)
+            if type(setting_dict[eachkey]) == list:
+                for eachsubkey in setting_dict[eachkey]:
+                    answer = json_q_dict[eachkey]['options'][eachsubkey]
+                    if answer:#just don't show anything if we haven't written the rec yet
+                        st.write(answer)
+            else:
+                answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]]
+                if answer: #just don't show anything if we haven't written the rec yet
+                    st.write(answer)     
 
 
 """
@@ -65,10 +92,23 @@ for eachkey in setting_dict.keys():
 for eachkey in setting_dict.keys():
     if json_q_dict[eachkey]["section"] == 'measurement':
         if json_q_dict[eachkey]["changes_based_on_3d"]:
-            answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]][f"3D_{is_3D}"]
-            if answer: #just don't show anything if we haven't written the rec yet
-                st.write(answer)
+            if type(setting_dict[eachkey]) == list:
+                for eachsubkey in setting_dict[eachkey]:
+                    answer = json_q_dict[eachkey]['options'][eachsubkey][f"3D_{is_3D}"]
+                    if answer:#just don't show anything if we haven't written the rec yet
+                        st.write(answer)
+            else:
+                answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]][f"3D_{is_3D}"]
+                if answer: #just don't show anything if we haven't written the rec yet
+                    st.write(answer)              
+
         else:
-            answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]]
-            if answer: #just don't show anything if we haven't written the rec yet
-                st.write(answer)
+            if type(setting_dict[eachkey]) == list:
+                for eachsubkey in setting_dict[eachkey]:
+                    answer = json_q_dict[eachkey]['options'][eachsubkey]
+                    if answer:#just don't show anything if we haven't written the rec yet
+                        st.write(answer)
+            else:
+                answer = json_q_dict[eachkey]['options'][setting_dict[eachkey]]
+                if answer: #just don't show anything if we haven't written the rec yet
+                    st.write(answer)     
