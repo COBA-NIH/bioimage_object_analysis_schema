@@ -20,6 +20,7 @@ The whole schema is currently best found on [Zenodo](https://doi.org/10.5281/zen
 Last updated - April 22, 2023
 
 Made by Beth Cimini, Broad Institute, 2023
+[Check out this app's source on GitHub](https://github.com/COBA-NIH/bioimage_object_analysis_schema)
 """
 import json
 import streamlit as st
