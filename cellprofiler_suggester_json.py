@@ -3,10 +3,10 @@ import os
 
 import streamlit as st
 
-json_q_dict = {json.load(open(x))['index']:json.load(open(x)) for x in os.listdir('.') if '.json' in x}
-count_list = list(json_q_dict.keys())
-count_list = [x for x in count_list if x >= 0] #allow for dummy files with an index of -1
-count_list.sort()
+from utils import load_schema
+
+json_q_dict = load_schema(from_master=False,rewrite_master=False)
+count_list = count_list = list(json_q_dict.keys())
 
 setting_dict = {}
 
