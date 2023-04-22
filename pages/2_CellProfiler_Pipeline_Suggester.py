@@ -7,6 +7,13 @@ import streamlit as st
 sys.path.append('..')
 from bioimage_object_analysis_schema.utils import load_schema
 
+
+"""
+# Tell us about your data
+
+(please note that not all questions are added yet. Stay tuned! Last updated April 22nd 2023)
+"""
+
 json_q_dict = load_schema(from_master=True,rewrite_master=False)
 count_list = count_list = list(json_q_dict.keys())
 
@@ -52,7 +59,7 @@ def follow_answer_tree(json_q_dict,eachkey,setting_dict,is_3D):
 """
 # CellProfiler pipeline recommendations
 
-(please note that not all question combinations have recommendations yet. Stay tuned! Last updated April 21st 2023)
+(please note that not all question combinations have recommendations yet. Stay tuned! Last updated April 22nd 2023)
 """
 
 """
