@@ -1,6 +1,7 @@
 import json
 import os
 
+import pandas
 
 def load_schema(from_master = True, rewrite_master = False, master_file = 'jsons/master_schema.json', short_master_file = 'jsons/master_schema_short.json'):
     if from_master:
@@ -24,6 +25,10 @@ def load_schema(from_master = True, rewrite_master = False, master_file = 'jsons
                 master_schema_short[question['full_name']]=list(question['options'].keys())
                 with open(short_master_file,'w') as mfs:
                     json.dump(master_schema_short,mfs)
+            max_val = max([len(val) for val in master_schema_short.values()])
+            short_schema_padded = {k:v+['']*(max_val - len(v)) for k,v in master_schema_short.items()}
+            df = pandas.DataFrame(short_schema_padded)
+            df.to_csv('bioimage_object_analysis_questions.csv',index=False)
 
     return master_schema_dict
 
