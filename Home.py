@@ -17,7 +17,7 @@ Embed in webpage rather than webpage forwarding - https://giswqs.medium.com/add-
 This is the part of the schema currently loaded into this interactive tool; stay tuned for more updates.
 The whole schema is currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
 
-Last updated - April 22, 2023
+Last updated - April 23, 2023
 
 Made by Beth Cimini, Broad Institute, 2023
 

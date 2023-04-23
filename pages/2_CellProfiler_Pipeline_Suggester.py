@@ -24,11 +24,16 @@ for eachcount in count_list:
     if question["short_name"]=='3D': #some answers will be different in 2D vs 3D
         is_3D_question = eachcount
     if question['select_all']:
-        setting_dict[eachcount] = st.multiselect(question['full_name'],list(question['options'].keys()),help=question['long_description'])
+        setting_dict[eachcount] = st.multiselect(question['full_name'],list(question['options'].keys()),
+                                                 help=question['long_description'])
     elif question['slider']:
-        setting_dict[eachcount] = st.select_slider(question['full_name'],list(question['options'].keys()),help=question['long_description'])
+        setting_dict[eachcount] = st.select_slider(question['full_name'],list(question['options'].keys()),
+                                                   value=list(question['options'].keys())[question["default_option_index"]],
+                                                   help=question['long_description'])
     else:
-        setting_dict[eachcount] = st.selectbox(question['full_name'],list(question['options'].keys()),help=question['long_description'])
+        setting_dict[eachcount] = st.selectbox(question['full_name'],list(question['options'].keys()),
+                                               index=question["default_option_index"],
+                                               help=question['long_description'])
 
 is_3D = setting_dict[is_3D_question] == "Yes"
 

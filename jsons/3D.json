@@ -1,5 +1,5 @@
 {
-    "index":1,
+    "index":0,
     "short_name":"3D",
     "full_name":"Are your images 3D?",
     "select_all":false,
@@ -17,5 +17,6 @@
         "Yes, but I wish to Z project them before proceeding":{
             "cellprofiler_suggester":"You said your images are 3D but need projection. Please first run a pipeline to project them (a written and video demo are available [here](https://forum.image.sc/t/input-modules-tutorial/63911#h-3d-processing-4814-6)). Once these are created, the now-2D projections can be used in their own CellProfiler pipeline."
         }
-    }
+    },
+    "default_option_index":1
 }

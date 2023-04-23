@@ -1,0 +1,22 @@
+{
+    "index":1,
+    "short_name":"microscope_methodology",
+    "full_name":"Microscope methodology?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"Whether the image that will eventually be used for segmentation (possibly after post-processing) is unstained brightfield (including phase contrast and DIC), histology stained brightfield, or fluorescence.",
+    "section":"image",
+    "changes_based_on_3d":false,
+    "options":{
+        "Brightfield - unstained":{
+            "cellprofiler_suggester":"You said your images are unstained brightfield. CellProfiler requires your images be bright in the areas you wish to segment and dim in the areas you don't; this is rarely the case with unstained brightfield. EnhanceOrSuppressFeatures in 'Texture' mode may be sufficient for what you need; if not, then using a pixel classification tool like ilastik or Trainable Weka Segmentation before using CellProfiler may help get your data into the format you need (see our Pixel Classification tutorial for more details). You can also consider using a neural network tool such as Cellpose that allows direct segmentation from brightfield (either before using CellProfiler or using the RunCellpose plugin)."
+        },
+        "Brightfield - histology stained":{
+            "cellprofiler_suggester":"You said your images are histologically stained. CellProfiler requires your images be bright in the areas you wish to segment and dim in the areas you don't; the UnmixColor module can do this for you. Note that this module does not support 3D in CellProfiler 4, but this functionality is avaialable when CellProfiler is installed from source and will be included in CellProfiler 5."
+        },
+        "Fluorescence":{
+            "cellprofiler_suggester":"You said your images are flurorescent. CellProfiler requires your images be bright in the areas you wish to segment and dim in the areas you don't; if at least one channel of your images already looks like this, nothing else is needed. If you want to segment the dimmer rather than the brighter parts of your fluorescent signal (such as segmenting nuclei from the dimmer 'holes' in ie an actin stain), you may find that using ImageMath's 'Invert' option helps you, though you will likely need to mask out background pixels for this strategy to succeed."
+        }
+    },
+    "default_option_index":2
+}

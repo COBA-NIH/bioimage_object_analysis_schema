@@ -29,5 +29,6 @@
             "3D_True":"You said you wanted to measure distance to and/or overlap with another kind of object. Unfortunately, CellProfiler currently doesn't calculate object overlap in 3D. If you want to calculate distance, you can use the MeasureObjectNeighbors module"
             }
         }
-    }
+    },
+    "default_option_index":0
 }
