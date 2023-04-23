@@ -31,3 +31,7 @@ from utils import load_schema
 load_schema(from_master=False,rewrite_master=True)
 
 st.write(json.load(open('bioimage_object_analysis_questions.json')))
+
+st.download_button('Download these questions and answers as a json file',open('bioimage_object_analysis_questions.json'),'bioimage_object_analysis_questions.json')
+st.download_button('Download these questions and answers as a csv file',open('bioimage_object_analysis_questions.csv'),'bioimage_object_analysis_questions.csv')
+
