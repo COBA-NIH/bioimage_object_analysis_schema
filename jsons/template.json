@@ -11,15 +11,15 @@
         "a":{
             "cellprofiler_suggester":
             {
-                "3D_False":"",
-                "3D_True":""
+                "3D_False":false,
+                "3D_True":false
             }
         },
         "b":{
             "cellprofiler_suggester":
             {
-                "3D_False":"",
-                "3D_True":""
+                "3D_False":false,
+                "3D_True":false
             }
         }
     },
