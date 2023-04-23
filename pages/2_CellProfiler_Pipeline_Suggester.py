@@ -11,7 +11,7 @@ from bioimage_object_analysis_schema.utils import load_schema
 """
 # Tell us about your data
 
-(please note that not all questions are added yet. Stay tuned! Last updated April 22nd 2023)
+(please note that not all questions are added yet. Stay tuned! Last updated April 23rd 2023)
 """
 
 json_q_dict = load_schema(from_master=True,rewrite_master=False)
@@ -19,7 +19,15 @@ count_list = count_list = list(json_q_dict.keys())
 
 setting_dict = {}
 
+section_start_text = {
+    "0":"### Questions about your images that may affect preprocessing before segmentation happens",
+    "9":"### Questions about your objects that may affect specific settings during segmentation",
+    "18":"### Questions about which measurements must be made of your objects"
+    }
+
 for eachcount in count_list:
+    if eachcount in list(section_start_text.keys()):
+        st.write(section_start_text[eachcount])
     question = json_q_dict[eachcount]
     if question["short_name"]=='3D': #some answers will be different in 2D vs 3D
         is_3D_question = eachcount
@@ -66,7 +74,7 @@ def follow_answer_tree(json_q_dict,eachkey,setting_dict,is_3D):
 """
 # CellProfiler pipeline recommendations
 
-(please note that not all question combinations have recommendations yet. Stay tuned! Last updated April 22nd 2023)
+(please note that not all questions and/or combinations have recommendations yet. Stay tuned! Last updated April 22nd 2023)
 """
 
 """
