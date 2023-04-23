@@ -1,7 +1,7 @@
 {
     "index":2,
     "short_name":"microscope_methodology",
-    "full_name":"Microscope methodology?",
+    "full_name":"What is the microscope methodology?",
     "select_all":false,
     "slider":false,
     "long_description":"Whether the image that will eventually be used for segmentation (possibly after post-processing) is unstained brightfield (including phase contrast and DIC), histology stained brightfield, or fluorescence.",

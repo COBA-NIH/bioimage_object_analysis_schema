@@ -1,7 +1,7 @@
 {
     "index":12,
     "short_name":"median_diameter",
-    "full_name":"Median object diameter",
+    "full_name":"What is the median object diameter?",
     "select_all":false,
     "slider":true,
     "long_description":"The median diameter of the object you want to segment, in pixels",
