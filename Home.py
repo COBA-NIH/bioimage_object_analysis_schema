@@ -30,4 +30,4 @@ from utils import load_schema
 
 load_schema(from_master=False,rewrite_master=True)
 
-st.write(json.load(open('jsons/master_schema_short.json')))
+st.write(json.load(open('bioimage_object_analysis_questions.json')))

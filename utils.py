@@ -3,7 +3,7 @@ import os
 
 import pandas
 
-def load_schema(from_master = True, rewrite_master = False, master_file = 'jsons/master_schema.json', short_master_file = 'jsons/master_schema_short.json'):
+def load_schema(from_master = True, rewrite_master = False, master_file = 'jsons/master_schema.json', short_master_file = 'bioimage_object_analysis_questions.json'):
     if from_master:
         master_schema_dict = json.load(open(master_file))
     else:
