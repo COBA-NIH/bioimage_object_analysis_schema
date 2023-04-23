@@ -1,0 +1,34 @@
+{
+    "index":3,
+    "short_name":"align_register",
+    "full_name":"Does alignment and/or registration need to be applied before proceeding?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"",
+    "section":"image",
+    "changes_based_on_3d":true,
+    "options":{
+        "No registration required":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Need to align images to other images":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Need to align images to a reference atlas":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        }
+    },
+    "default_option_index":0
+}

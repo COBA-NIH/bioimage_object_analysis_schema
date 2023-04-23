@@ -1,0 +1,25 @@
+{
+    "index":5,
+    "short_name":"signal_to_noise",
+    "full_name":"How would you describe the signal-to-noise + signal-to-background ratios between background and true signal?",
+    "select_all":false,
+    "slider":true,
+    "long_description":" [here](https://bioimagebook.github.io/chapters/3-fluorescence/3-formation_noise/formation_noise.html)",
+    "section":"image",
+    "changes_based_on_3d":false,
+    "options":{
+        "NA/Not fluorescent":{
+            "cellprofiler_suggester":false
+        },
+        "Poor (histogram peaks nearly indistinguishable)":{
+            "cellprofiler_suggester":false
+        },
+        "OK (histogram peaks obvious but overlapping)":{
+            "cellprofiler_suggester":false
+        },
+        "Great (histogram peaks fully distinct)":{
+            "cellprofiler_suggester":false
+        }
+    },
+    "default_option_index":2
+}

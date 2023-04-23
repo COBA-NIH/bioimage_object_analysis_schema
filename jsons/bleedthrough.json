@@ -1,0 +1,25 @@
+{
+    "index":4,
+    "short_name":"bleedthrough",
+    "full_name":"Is fluorescent bleedthrough present in these images?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"",
+    "section":"image",
+    "changes_based_on_3d":false,
+    "options":{
+        "NA/Not fluorescent and/or multichannel":{
+            "cellprofiler_suggester":false
+        },
+        "No":{
+            "cellprofiler_suggester":false
+        },
+        "Yes, but we don't need to apply a correction in this workflow":{
+            "cellprofiler_suggester":false
+        },
+        "Yes, and we do need to apply a correction in this workflow":{
+            "cellprofiler_suggester":false
+        }
+    },
+    "default_option_index":1
+}

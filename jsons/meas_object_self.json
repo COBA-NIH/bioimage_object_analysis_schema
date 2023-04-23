@@ -1,0 +1,31 @@
+{
+    "index":18,
+    "short_name":"meas_object_self",
+    "full_name":"Which object-intrinsic measurements should be made? Select all that apply",
+    "select_all":true,
+    "slider":false,
+    "long_description":"",
+    "section":"measurement",
+    "changes_based_on_3d":false,
+    "options":{
+        "Shape and/or size":{
+            "cellprofiler_suggester":false
+        },
+        "Intensity values":{
+            "cellprofiler_suggester":false
+        },
+        "Intensity spatial distribution":{
+            "cellprofiler_suggester":false
+        },
+        "Texture/granularity":{
+            "cellprofiler_suggester":false
+        },
+        "Colocalization of channels":{
+            "cellprofiler_suggester":false
+        },
+        "Motion parameters":{
+            "cellprofiler_suggester":false
+        }
+    },
+    "default_option_index":0
+}

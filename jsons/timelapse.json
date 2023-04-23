@@ -1,0 +1,27 @@
+{
+    "index":1,
+    "short_name":"timelapse",
+    "full_name":"Are you trying to analyze images from a timelapse series?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"",
+    "section":"image",
+    "changes_based_on_3d":true,
+    "options":{
+        "Yes":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "No":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        }
+    },
+    "default_option_index":1
+}

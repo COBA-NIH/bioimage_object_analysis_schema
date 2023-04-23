@@ -1,0 +1,19 @@
+{
+    "index":6,
+    "short_name":"surface_marker",
+    "full_name":"Is there a marker for the desired object that smoothly covers the whole object?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"",
+    "section":"image",
+    "changes_based_on_3d":false,
+    "options":{
+        "Yes":{
+            "cellprofiler_suggester":false
+        },
+        "No":{
+            "cellprofiler_suggester":false
+        }
+    },
+    "default_option_index":0
+}

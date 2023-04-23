@@ -1,0 +1,31 @@
+{
+    "index":8,
+    "short_name":"image_qc_issues",
+    "full_name":"Which if any of the following image quality issues are present? Select all that apply.",
+    "select_all":true,
+    "slider":false,
+    "long_description":"",
+    "section":"image",
+    "changes_based_on_3d":false,
+    "options":{
+        "Overconfluence":{
+            "cellprofiler_suggester":false
+        },
+        "Debris":{
+            "cellprofiler_suggester":false
+        },
+        "Inconsistent focus":{
+            "cellprofiler_suggester":false
+        },
+        "Variable background":{
+            "cellprofiler_suggester":false
+        },
+        "Artifacts from tile stitching":{
+            "cellprofiler_suggester":false
+        },
+        "Artifacts from multi-view integration":{
+            "cellprofiler_suggester":false
+        }
+    },
+    "default_option_index":0
+}

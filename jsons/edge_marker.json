@@ -1,0 +1,19 @@
+{
+    "index":7,
+    "short_name":"edge_marker",
+    "full_name":"Is there a marker for the desired object that specifically highlights its edges?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"",
+    "section":"image",
+    "changes_based_on_3d":false,
+    "options":{
+        "Yes":{
+            "cellprofiler_suggester":false
+        },
+        "No":{
+            "cellprofiler_suggester":false
+        }
+    },
+    "default_option_index":1
+}

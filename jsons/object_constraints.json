@@ -1,0 +1,25 @@
+{
+    "index":9,
+    "short_name":"object_constraints",
+    "full_name":"What object constraints (if any) should be used to filter objects for validity? Select all that apply.",
+    "select_all":true,
+    "slider":false,
+    "long_description":"",
+    "section":"object",
+    "changes_based_on_3d":false,
+    "options":{
+        "Minimum / maximum diameter":{
+            "cellprofiler_suggester":false
+        },
+        "Minimum / maximum count":{
+            "cellprofiler_suggester":false
+        },
+        "Presence within another stain / object":{
+            "cellprofiler_suggester":false
+        },
+        "Minimum / maximum count within another object":{
+            "cellprofiler_suggester":false
+        }
+    },
+    "default_option_index":0
+}
