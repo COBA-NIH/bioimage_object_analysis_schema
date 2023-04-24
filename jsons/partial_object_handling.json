@@ -1,0 +1,27 @@
+{
+    "index":16,
+    "short_name":"partial_object_handling",
+    "full_name":"Should objects touching the border of the image be removed?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"",
+    "section":"object",
+    "changes_based_on_3d":true,
+    "options":{
+        "Yes":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "No":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        }
+    },
+    "default_option_index":0
+}

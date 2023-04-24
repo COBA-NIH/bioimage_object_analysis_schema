@@ -1,0 +1,41 @@
+{
+    "index":15,
+    "short_name":"crowdedness",
+    "full_name":"How close will each object typically be to its nearest neighbors of the same object type?",
+    "select_all":false,
+    "slider":true,
+    "long_description":"",
+    "section":"object",
+    "changes_based_on_3d":true,
+    "options":{
+        "No neighbors within 3 diameters":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Some neighbors within 1-3 diameters":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Some touching of neighbors":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Entirely touching neighbors":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        }
+    },
+    "default_option_index":0
+}

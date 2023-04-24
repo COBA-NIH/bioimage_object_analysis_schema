@@ -5,48 +5,10 @@ import sys
 import streamlit as st
 
 sys.path.append('..')
-from bioimage_object_analysis_schema.utils import load_schema
+from bioimage_object_analysis_schema.utils import display_interactive_schema
 
 
-"""
-# Tell us about your data
-
-(please note that not all questions are added yet. Stay tuned! Last updated April 23rd 2023)
-"""
-
-json_q_dict = load_schema(from_master=True,rewrite_master=False)
-count_list = count_list = list(json_q_dict.keys())
-
-setting_dict = {}
-
-section_start_text = {
-    "0":"### Questions about your images that may affect preprocessing before segmentation happens",
-    "9":"### Questions about your objects that may affect specific settings during segmentation",
-    "18":"### Questions about which measurements must be made of your objects"
-    }
-
-for eachcount in count_list:
-    if eachcount in list(section_start_text.keys()):
-        st.write(section_start_text[eachcount])
-    question = json_q_dict[eachcount]
-    if question["short_name"]=='3D': #some answers will be different in 2D vs 3D
-        is_3D_question = eachcount
-    if question['select_all']:
-        setting_dict[eachcount] = st.multiselect(question['full_name'],list(question['options'].keys()),
-                                                 help=question['long_description'])
-    elif question['slider']:
-        setting_dict[eachcount] = st.select_slider(question['full_name'],list(question['options'].keys()),
-                                                   value=list(question['options'].keys())[question["default_option_index"]],
-                                                   help=question['long_description'])
-    else:
-        setting_dict[eachcount] = st.selectbox(question['full_name'],list(question['options'].keys()),
-                                               index=question["default_option_index"],
-                                               help=question['long_description'])
-
-is_3D = setting_dict[is_3D_question] == "Yes"
-
-by_name_dict = {json_q_dict[x]['full_name']:setting_dict[x] for x in count_list}
-st.download_button('Download my answers as a json file',json.dumps(by_name_dict),'dataset_description.json')
+json_q_dict,setting_dict,is_3D = display_interactive_schema()
 
 def follow_answer_tree(json_q_dict,eachkey,setting_dict,is_3D):
     if json_q_dict[eachkey]["changes_based_on_3d"]:

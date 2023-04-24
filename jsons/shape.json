@@ -1,0 +1,41 @@
+{
+    "index":10,
+    "short_name":"shape",
+    "full_name":"What shape is most characteristic of your objects?",
+    "select_all":false,
+    "slider":false,
+    "long_description":"",
+    "section":"object",
+    "changes_based_on_3d":true,
+    "options":{
+        "Round":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Square":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Linear/extended":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Irregular":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        }
+    },
+    "default_option_index":0
+}

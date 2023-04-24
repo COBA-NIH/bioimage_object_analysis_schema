@@ -14,12 +14,12 @@ Embed in webpage rather than webpage forwarding - https://giswqs.medium.com/add-
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
 
-This is the part of the schema currently loaded into this interactive tool; stay tuned for more updates.
-The whole schema is currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
+This schema is currently under develeopment; stay tuned for more updates.
+Previous versions of this schema are currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
 
-Last updated - April 23, 2023
+Last updated - April 24, 2023
 
-Made by Beth Cimini, Broad Institute, 2023
+Made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open Bioimage Analysis
 
 [Check out this app's source on GitHub](https://github.com/COBA-NIH/bioimage_object_analysis_schema)
 """

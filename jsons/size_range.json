@@ -1,0 +1,41 @@
+{
+    "index":13,
+    "short_name":"size_range",
+    "full_name":"Approximately how large is the size range between your biggest and smallest expected objects?",
+    "select_all":false,
+    "slider":true,
+    "long_description":"",
+    "section":"object",
+    "changes_based_on_3d":true,
+    "options":{
+        "Range is +/- 30%":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Range is +/- 30% to 2-fold":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Range is 2-fold to 10-fold":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        },
+        "Range is greater than 10-fold":{
+            "cellprofiler_suggester":
+            {
+                "3D_False":false,
+                "3D_True":false
+            }
+        }
+    },
+    "default_option_index":0
+}
