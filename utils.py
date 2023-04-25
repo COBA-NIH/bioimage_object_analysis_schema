@@ -157,4 +157,4 @@ def make_fig():
             0.5, y+(0.5*h), f"{answers[eachanswer]}",width=430, widthcoords=None,
             ha="center", va='center',ma="center", size=7, color=text_color,linespacing=1)
             ax.add_artist(wtxt)
-    plt.savefig('figure.png',dpi=300)
+    plt.savefig('figure.png',dpi=300,bbox_inches='tight')

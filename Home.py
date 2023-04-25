@@ -39,4 +39,4 @@ st.download_button('Download these questions and answers as a csv file',open('bi
 
 make_fig()
 
-st.image('figure.png',width=750)
+st.image('figure.png')
