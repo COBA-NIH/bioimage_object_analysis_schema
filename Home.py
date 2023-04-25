@@ -16,14 +16,20 @@ Embedded in a webpage at BOAQ.org, thanks to https://giswqs.medium.com/add-a-cus
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
 
-This schema is currently under develeopment; stay tuned for more updates.
+This website is associated with the paper "The Twenty Questions of Bioimage Object Analysis" by Beth A. Cimini and Kevin W. Eliceiri, currently under revision at Nature Methods.
+
+This schema is currently under development; stay tuned for more updates.
 Previous versions of this schema are currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
 
-Last updated - April 24, 2023
+Last updated - April 25, 2023
 
-Made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open Bioimage Analysis
+App made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open Bioimage Analysis
 
 [Check out this app's source on GitHub](https://github.com/COBA-NIH/bioimage_object_analysis_schema)
+
+[![DOI](https://zenodo.org/badge/629135528.svg)](https://zenodo.org/badge/latestdoi/629135528) (Source code DOI)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7654937.svg)](https://doi.org/10.5281/zenodo.7654937) (Original schema DOI)
 """
 import json
 import streamlit as st
@@ -38,5 +44,3 @@ st.download_button('Download these questions and answers as a json file',open('b
 st.download_button('Download these questions and answers as a csv file',open('bioimage_object_analysis_questions.csv'),'bioimage_object_analysis_questions.csv')
 
 make_fig()
-
-st.image('figure.png')

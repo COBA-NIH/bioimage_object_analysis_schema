@@ -36,7 +36,9 @@ def load_schema(from_master = True, rewrite_master = False, master_file = 'jsons
 def display_interactive_schema():
     st.write("# Tell us about your data")
     st.write("")
-    st.write("please note that these questions are not finalized and questions and answers may be edited or removed. Last updated April 24th 2023")
+    st.write("#### When analyzing multiple kinds of objects, these set of questions should be independently answered for each object to be segmented.")
+    st.write("")
+    st.write("please note that these questions are not finalized and questions and answers may be edited or removed. Last updated April 25th 2023")
 
     json_q_dict = load_schema(from_master=True,rewrite_master=False)
     count_list = count_list = list(json_q_dict.keys())
