@@ -19,6 +19,9 @@
         },
         "Minimum / maximum count within another object":{
             "cellprofiler_suggester":false
+        },
+        "Minimum / maximum possible threshold":{
+            "cellprofiler_suggester":false
         }
     },
     "default_option_index":0

@@ -72,3 +72,89 @@ def display_interactive_schema():
     by_name_dict = {json_q_dict[x]['full_name']:setting_dict[x] for x in count_list}
     st.download_button('Download my answers as a json file',json.dumps(by_name_dict),'dataset_description.json')
     return json_q_dict,setting_dict,is_3D
+
+def make_fig():
+    # much of this stolen from https://github.com/mwaskom/seaborn/blob/bf0cfec0627bee4b757f033ff504c0a520a3cd5b/doc/sphinxext/tutorial_builder.py#L130
+    # subplot wrapping from https://gist.github.com/dneuman/90af7551c258733954e3b1d1c17698fe
+    import json
+    import matplotlib as mpl
+    import matplotlib.text as mtext
+    from matplotlib.patches import FancyBboxPatch
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    qs=json.load(open('jsons/master_schema.json'))
+    categories = ['Measurement','Object','Image']
+
+    dict_for_plotting = {'Question':[x['full_name'] for x in qs.values()],
+                        'Category':[x['section'].title() for x in qs.values()],
+                        'Answers':[list(x['options'].keys()) for x in qs.values()],
+                        }
+    class WrapText(mtext.Text):
+        """
+        WrapText(x, y, s, width, widthcoords, **kwargs)
+        x, y       : position (default transData)
+        text       : string
+        width      : box width
+        widthcoords: coordinate system (default screen pixels)
+        **kwargs   : sent to matplotlib.text.Text
+        Return     : matplotlib.text.Text artist
+        """
+        def __init__(self,
+                    x=0, y=0, text='',
+                    width=0,
+                    widthcoords=None,
+                    **kwargs):
+            mtext.Text.__init__(self,
+                    x=x, y=y, text=text,
+                    wrap=True,
+                    clip_on=False,
+                    **kwargs)
+            if not widthcoords:
+                self.width = width
+            else:
+                self.width = widthcoords.transform_point((width,0))[0]
+
+        def _get_wrap_line_width(self):
+            return self.width
+
+    mpl.rcParams['figure.subplot.wspace']=mpl.rcParams['figure.subplot.hspace']=0.001
+    fig = plt.figure(figsize=[10,12],dpi=300)
+    with sns.axes_style("white"):
+        axes = fig.subplots(ncols=4,nrows=5,sharex=True,sharey=True)
+    deep = sns.color_palette("deep")
+    colors ={"Image":deep[0], "Object":deep[1], "Measurement":deep[2]}
+    dark = sns.color_palette("dark")
+    text_colors = {"Image":dark[0], "Object":dark[1], "Measurement":dark[2]}
+    pad = 0.04
+    for eachq in range(20):
+        x = eachq %4
+        y = int(eachq /4)
+        color = colors[dict_for_plotting['Category'][eachq]]+(.25,)
+        text_color = text_colors[dict_for_plotting['Category'][eachq]]
+        ax = axes[y][x]
+        ax.set_axis_off()
+        ax.set(xlim=(0, 1), ylim=(0, 1))
+        ax.add_artist(FancyBboxPatch(
+            (0.05, 0.78), 0.89, 0.15, f"round,pad={pad}",
+            linewidth=1, edgecolor=text_color, facecolor=color,
+        ))
+        wtxt = WrapText(
+            0.5, 0.85, f"{dict_for_plotting['Question'][eachq]}",width=550, widthcoords=None,
+            ha="center", va='center',ma="center", size=7, color=text_color
+        )
+        ax.add_artist(wtxt)
+        answers = dict_for_plotting['Answers'][eachq]
+        pad2 = 0.01
+        h = (0.72-(3*pad2*len(answers)))/(len(answers))
+        color2 = colors[dict_for_plotting['Category'][eachq]]+(.15,)
+        for eachanswer in range(len(answers)):
+            y = 0.75-((h+(3*pad2))*(eachanswer+1))
+            ax.add_artist(FancyBboxPatch(
+            (0.1, y), 0.8, h, f"round,pad={pad2}",
+            linewidth=1, edgecolor=text_color, facecolor=color2,))
+            wtxt = WrapText(
+            0.5, y+(0.5*h), f"{answers[eachanswer]}",width=430, widthcoords=None,
+            ha="center", va='center',ma="center", size=7, color=text_color,linespacing=1)
+            ax.add_artist(wtxt)
+    plt.savefig('figure.png',dpi=300)

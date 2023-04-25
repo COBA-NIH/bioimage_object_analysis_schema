@@ -1,14 +1,16 @@
 """
-Can plan to do this multipage - https://docs.streamlit.io/library/get-started/multipage-apps
-- one with chart (charts.py), 
-- one with nice expanded answers 
+Pages
+- One with nice expanded answers - done
+- Generic interactive page - done, but would be nice to load saved jsons
+- Recommender pages - 
+-- CellProfiler - done
+- one with chart (charts.py) - TODO
 -- mermaid chart maybe? 
 -- https://docs.bokeh.org/en/latest/docs/examples/topics/categorical/periodic.html
 -- just matplotlib sub-charts (https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subfigures.html) with text boxes(https://matplotlib.org/stable/gallery/text_labels_and_annotations/fancytextbox_demo.html#sphx-glr-gallery-text-labels-and-annotations-fancytextbox-demo-py)), 
-- one with CellProfiler suggestions.
-Need also a util data loader function, pull all the jsons and put them into (likely a few) master dicts with the right components
-It's all just tiny text files so it should be fine, but https://docs.streamlit.io/library/api-reference/performance/st.cache_data
-Embed in webpage rather than webpage forwarding - https://giswqs.medium.com/add-a-custom-domain-to-your-streamlit-web-app-daed6d11dd72
+
+It's all just tiny text files so it should be fine, but if need to cache- https://docs.streamlit.io/library/api-reference/performance/st.cache_data
+Embedded in a webpage at BOAQ.org, thanks to https://giswqs.medium.com/add-a-custom-domain-to-your-streamlit-web-app-daed6d11dd72
 """
 
 """
@@ -26,7 +28,7 @@ Made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open Bioim
 import json
 import streamlit as st
 
-from utils import load_schema
+from utils import load_schema,make_fig
 
 load_schema(from_master=False,rewrite_master=True)
 
@@ -35,3 +37,6 @@ st.write(json.load(open('bioimage_object_analysis_questions.json')))
 st.download_button('Download these questions and answers as a json file',open('bioimage_object_analysis_questions.json'),'bioimage_object_analysis_questions.json')
 st.download_button('Download these questions and answers as a csv file',open('bioimage_object_analysis_questions.csv'),'bioimage_object_analysis_questions.csv')
 
+make_fig()
+
+st.image('figure.png',width=750)
