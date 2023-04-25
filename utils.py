@@ -124,7 +124,7 @@ def make_fig():
     fig = plt.figure(figsize=[10,12],dpi=300)
     with sns.axes_style("white"):
         axes = fig.subplots(ncols=4,nrows=5,sharex=True,sharey=True)
-    deep = sns.color_palette("deep")
+    deep = sns.color_palette("colorblind")
     colors ={"Image":deep[0], "Object":deep[1], "Measurement":deep[2]}
     dark = sns.color_palette("dark")
     text_colors = {"Image":dark[0], "Object":dark[1], "Measurement":dark[2]}
