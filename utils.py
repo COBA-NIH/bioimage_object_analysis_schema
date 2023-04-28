@@ -142,7 +142,7 @@ def make_fig():
             linewidth=1, edgecolor=text_color, facecolor=color,
         ))
         wtxt = WrapText(
-            0.5, 0.85, f"{dict_for_plotting['Question'][eachq]}",width=550, widthcoords=None,
+            0.5, 0.85, f"{eachq+1}) {dict_for_plotting['Question'][eachq]}",width=550, widthcoords=None,
             ha="center", va='center',ma="center", size=7, color=text_color
         )
         ax.add_artist(wtxt)
