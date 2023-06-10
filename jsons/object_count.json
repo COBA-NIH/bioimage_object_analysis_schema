@@ -4,43 +4,43 @@
     "full_name":"Approximately how many objects of this type will be present in each image?",
     "select_all":false,
     "slider":true,
-    "long_description":"",
+    "long_description":"The approximate number of objects expected in each image",
     "section":"object",
     "changes_based_on_3d":true,
     "options":{
         "0-3":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said you expect 0-3 objects per image. You can set a hard cutoff for this in IdentifyPrimaryObjects by setting the 'Handling of objects if excessive number of identified' setting to 'Erase'; if the module's segmentation creates more than the 'Maximum number of objects' setting, all objects will be erased and no objects will be returned. You can also choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after IdentifyPrimaryObjects; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category.",
+                "3D_True":"You said you expect 0-3 objects per image. You can choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after Watershed; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category."
             }
         },
         "3-10":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said you expect 3-10 objects per image. You can set a hard cutoff for this in IdentifyPrimaryObjects by setting the 'Handling of objects if excessive number of identified' setting to 'Erase'; if the module's segmentation creates more than the 'Maximum number of objects' setting, all objects will be erased and no objects will be returned. You can also choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after IdentifyPrimaryObjects; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category.",
+                "3D_True":"You said you expect 3-10 objects per image. You can choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after Watershed; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category."
             }
         },
         "10-100":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said you expect 10-100 objects per image. You can set a hard cutoff for this in IdentifyPrimaryObjects by setting the 'Handling of objects if excessive number of identified' setting to 'Erase'; if the module's segmentation creates more than the 'Maximum number of objects' setting, all objects will be erased and no objects will be returned. You can also choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after IdentifyPrimaryObjects; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category.",
+                "3D_True":"You said you expect 10-100 objects per image. You can choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after Watershed; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category."
             }
         },
         "100-1000":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said you expect 100-1000 objects per image. You can set a hard cutoff for this in IdentifyPrimaryObjects by setting the 'Handling of objects if excessive number of identified' setting to 'Erase'; if the module's segmentation creates more than the 'Maximum number of objects' setting, all objects will be erased and no objects will be returned. You can also choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after IdentifyPrimaryObjects; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category.",
+                "3D_True":"You said you expect 100-1000 objects per image. You can choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after Watershed; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category."
             }
         },
         "1000-10000":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said you expect 100-1000 objects per image. You can set a hard cutoff for this in IdentifyPrimaryObjects by setting the 'Handling of objects if excessive number of identified' setting to 'Erase'; if the module's segmentation creates more than the 'Maximum number of objects' setting, all objects will be erased and no objects will be returned. You can also choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after IdentifyPrimaryObjects; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category. Note that pipelines which make very large numbers of objects may suffer from increased memory usage.",
+                "3D_True":"You said you expect 100-1000 objects per image. You can choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after Watershed; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category. Note that pipelines which make very large numbers of objects may suffer from increased memory usage."
             }
         }
     },

@@ -4,27 +4,27 @@
     "full_name":"Which object-intrinsic measurements should be made? Select all that apply",
     "select_all":true,
     "slider":false,
-    "long_description":"",
+    "long_description":"The ways in which the objects should be measured. Note that 'Intensity values' can be intensity of any provided image, such as a fluorescent channel, a processed FLIM lifeteime image, a distance map to some other landmark made with the Morph module, etc",
     "section":"measurement",
     "changes_based_on_3d":false,
     "options":{
         "Shape and/or size":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you wish to measure shape and/or size. Be sure to add the MeasureObjectSizeShape module to the pipeline."
         },
         "Intensity values":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you wish to measure intensity values. Be sure to add the MeasureObjectIntensity module to the pipeline."
         },
         "Intensity spatial distribution":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you wish to measure the spatial distribution of the intensity. Be sure to add the MeasureObjectIntensityDistribution module to the pipeline."
         },
         "Texture/granularity":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you wish to measure texture and/or granularity. Be sure to add the MeasureTexture (with 'Measure whole images or objects?' set to either 'Objects' or 'Both') and/or the MeasureGranularity module (with 'Measure within objects?' set to 'Yes') to the pipeline."
         },
         "Colocalization of channels":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you wish to measure colocalization of channels. Be sure to add the MeasureColocalization module (with 'Select where to measure correlation' set to 'Within objects' or 'Both') to the pipeline."
         },
         "Motion parameters":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you wish to measure motion parameters. Be sure to add the TrackObjects module to the pipeline; see the suggestions for 'Are you trying to analyze images from a timelapse series?' for more information about how to set up a pipeline to correctly support tracking."
         }
     },
     "default_option_index":0

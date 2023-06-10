@@ -4,24 +4,44 @@
     "full_name":"What object constraints (if any) should be used to filter objects for validity? Select all that apply.",
     "select_all":true,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether there are any restrictions and/or sanity checks that can be provided for the objects, based on the biologist's knowledge of the experiment",
     "section":"object",
-    "changes_based_on_3d":false,
+    "changes_based_on_3d":true,
     "options":{
         "Minimum / maximum diameter":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said there should be a minimum and/or maximum permitted object diameter. Hard cutoffs on diameter can be set during IdentifyPrimaryObjects using the 'Discard objects outside the diameter range?' setting. Objects can also be filtered on diameter by running MeasureObjectSizeShape followed by FilterObjects; by setting 'Select the filtering mode' to 'Measurements' and 'Select the filtering method' to 'Limits', minimum and/or maximum values can be provided.",
+                "3D_True":"You said there should be a minimum and/or maximum permitted object diameter. Objects can be filtered on diameter by running MeasureObjectSizeShape followed by FilterObjects; by setting 'Select the filtering mode' to 'Measurements' and 'Select the filtering method' to 'Limits' minimum and/or maximum values can be provided."
+            }
         },
         "Minimum / maximum count":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said there should be a minimum or maximum count of objects. You can set a hard cutoff for this in IdentifyPrimaryObjects by setting the 'Handling of objects if excessive number of identified' setting to 'Erase'; if the module's segmentation creates more than the 'Maximum number of objects' setting, all objects will be erased and no objects will be returned. You can also choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after IdentifyPrimaryObjects; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category.",
+                "3D_True":"You said there should be a minimum or maximum count of objects. You can choose to flag or to skip image sets entirely based on the count of objects by adding a FlagImage module somewhere after Watershed; set 'Flag image based on' to 'Whole-image measurement' setting and then choose the 'Count' category."
+            }
         },
         "Presence within another stain / object":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said that the objects should only be identified within a certain other stain or object (in the latter case, the larger enclosing object is called the 'Parent object' and the enclosed objects 'Child objects' or 'Children'). This can be ensured by running IdentifyPrimaryObjects on an image that has already been masked accordingly with MaskImage. It can also be done after segmentation using RelateObjects by setting 'Do you want to save the children with parents as a new object set?' to 'Yes', or by using the MaskObjects module.",
+                "3D_True":"You said that the objects should only be identified within a certain other stain or object (in the latter case, the larger enclosing object is called the 'Parent object' and the enclosed objects 'Child objects' or 'Children'). This can be ensured by running Watershed on an image that has already been masked accordingly with MaskImage. It can also be done after segmentation using RelateObjects by setting 'Do you want to save the children with parents as a new object set?' to 'Yes'"
+            }
         },
         "Minimum / maximum count within another object":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said that these objects ('Child objects' or 'Children' in the context of CellProfiler) should have a maximum or minimum count within another object (known as the 'Parent' object). If there should only be 1 'internal' object, this can be enforced in FilterObjects by setting 'Select the filtering mode' to 'Measurements' and 'Select the filtering method' to 'Minimal per object' or 'Maximum per object' and identifying a criteria by which to identify the 'correct object'. If you wish to flag and/or skip images where there are too few or too many child objects per parent, this can be done in FlagImages by setting 'Flag is based on' to either 'Average measurement for all objects in each image' or 'Measurements for all objects in each image' (depending on if you want to use the most extreme values or just the per-image means), setting 'Select the object to be used for flagging' to the parent object, then selecting 'Children' as the category.",
+                "3D_True":"You said that these objects ('Child objects' or 'Children' in the context of CellProfiler) should have a maximum or minimum count within another object (known as the 'Parent' object). If there should only be 1 'internal' object, this can be enforced in FilterObjects by setting 'Select the filtering mode' to 'Measurements' and 'Select the filtering method' to 'Minimal per object' or 'Maximum per object' and identifying a criteria by which to identify the 'correct object'. If you wish to flag and/or skip images where there are too few or too many child objects per parent, this can be done in FlagImages by setting 'Flag is based on' to either 'Average measurement for all objects in each image' or 'Measurements for all objects in each image' (depending on if you want to use the most extreme values or just the per-image means), setting 'Select the object to be used for flagging' to the parent object, then selecting 'Children' as the category."
+            }
         },
         "Minimum / maximum possible threshold":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said that these objects should have a minimum or maximum threshold; this is often helpful when image quality is variable and/or there are many images. This can be set in IdentifyPrimaryObjects using the 'Lower and upper bounds on threshold' setting.",
+                "3D_True":"You said that these objects should have a minimum or maximum threshold; this is often helpful when image quality is variable and/or there are many images. This can be set in Threshold using the 'Lower and upper bounds on threshold' setting."
+            }
         }
     },
     "default_option_index":0

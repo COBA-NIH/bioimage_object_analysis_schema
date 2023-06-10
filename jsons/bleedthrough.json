@@ -4,7 +4,7 @@
     "full_name":"Is fluorescent bleedthrough present in these images?",
     "select_all":false,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether bleedthrough of fluorescent channels is present in the images; this typically occurs when using multiple dyes with very close spectral signatures",
     "section":"image",
     "changes_based_on_3d":false,
     "options":{
@@ -15,10 +15,10 @@
             "cellprofiler_suggester":false
         },
         "Yes, but we don't need to apply a correction in this workflow":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you expect bleedthrough but do not wish to attempt to correct it. This is appropriate in some circumstances (such as when the spectrally overlapping dyes are very well spatially separated), but be sure to keep this in mind for any downstream data processing you may do."
         },
         "Yes, and we do need to apply a correction in this workflow":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you expect bleedthrough in these images and wish to correct it; for rough correction, you may find operations in ImageMath (such as the ability to divide or subtract images) helpful in this. For a more sophisticated option, you may find the CompensateColors CellProfiler plugin helpful; it is available at https://github.com/CellProfiler/CellProfiler-plugins"
         }
     },
     "default_option_index":1

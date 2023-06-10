@@ -4,36 +4,36 @@
     "full_name":"What shape is most characteristic of your objects?",
     "select_all":false,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether objects tend to be round, square, linear (or rod shaped or worm shaped) or irregularly shaped.",
     "section":"object",
     "changes_based_on_3d":true,
     "options":{
         "Round":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said your objects are round; either intensity- or shape- based object segmentation will likely work well for you.",
+                "3D_True":"You said your objects are round; either intensity- or shape- based object segmentation will likely work well for you."
             }
         },
         "Square":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said your objects are square; either intensity- or shape- based object segmentation will likely work well for you. Note that if you are trying to identify a square grid, DefineGrid and IdentifyObjectsInGrid may increase your accuracy",
+                "3D_True":"You said your objects are square; either intensity- or shape- based object segmentation will likely work well for you."
             }
         },
         "Linear/extended":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said your objects are linear or extended; classical segmentation may be challenging if your objects are not very well separated. If your objects are vaguely worm-shaped, you may try the WormToolbox modules to increase your chances of success; otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)",
+                "3D_True":"You said your objects are linear or extended; classical segmentation may be challenging if your objects are not very well separated. You might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
             }
         },
         "Irregular":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said your objects are irregularly shaped; classical segmentation may be challenging if your objects are not very well separated. If your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with IdentifyPrimaryObjects and this object with IdentifySecondaryObjects. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)" ,
+                "3D_True":"You said your objects are irregularly shaped; classical segmentation may be challenging if your objects are not very well separated. If your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with Threshold and Watershed and then using these objects as seeds for a second round of Threshold followed by marker-based Watershed. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
             }
         }
     },

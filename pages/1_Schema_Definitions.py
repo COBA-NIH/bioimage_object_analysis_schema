@@ -11,6 +11,8 @@ json_q_dict = load_schema(from_master=True,rewrite_master=False)
 
 """
 # Explanation of each of the question in the schema
+
+Please note that questions and answers may be edited or removed in future versions of the schema. Last updated June 10th 2023
 """
 
 for _,values in json_q_dict.items():

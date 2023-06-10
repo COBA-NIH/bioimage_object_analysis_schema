@@ -4,15 +4,15 @@
     "full_name":"Are you trying to analyze images from a timelapse series?",
     "select_all":false,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether or not images are coming from the same position over time, and objects should be related to one another over from time point to time point",
     "section":"image",
     "changes_based_on_3d":true,
     "options":{
         "Yes":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You have said your images come from a time series. If you wish to track objects across time points, you may do so using the TrackObjects module. If you are analyzing more than one movie, you will need to use the Metadata module to identify metadata (such as a file or folder name) that can be used to distinguish the movies, and the Groups module to group your timeframes into movies; see those module's help settings and broad.io/CellProfilerInput for more information for more information.",
+                "3D_True":"You have said your images come from a time series. Unfortunately, the TrackObjects module does not support 3D images at this time. If you cannot first Z project your images, you unfortunately cannot use CellProfiler for tracking at this time."
             }
         },
         "No":{

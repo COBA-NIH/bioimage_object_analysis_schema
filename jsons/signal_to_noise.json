@@ -4,7 +4,7 @@
     "full_name":"How would you describe the signal-to-noise + signal-to-background ratios between background and true signal?",
     "select_all":false,
     "slider":true,
-    "long_description":" [here](https://bioimagebook.github.io/chapters/3-fluorescence/3-formation_noise/formation_noise.html)",
+    "long_description":"The approximate separability of areas of the image that have true fluorescent signal vs autofluorescence or nonspecific signal; see [here for more description](https://bioimagebook.github.io/chapters/3-fluorescence/3-formation_noise/formation_noise.html).",
     "section":"image",
     "changes_based_on_3d":false,
     "options":{
@@ -12,10 +12,10 @@
             "cellprofiler_suggester":false
         },
         "Poor (histogram peaks nearly indistinguishable)":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You have said the intensity separation between true signal and other areas is poor; it may be advisable to repeat the experiment to achieve better signal. You might try a few options within CellProfiler: a) turning on 'Log transform before thresholding?' when thresholding b) using the ImageMath module to raise your image to an exponent >1 (by setting 'Operation' to 'None' and then setting the 'Raise the power of the result by' as needed c) using the EnhanceOrSuppressFeatures module to remove large areas of non-specific intensity d) using CorrectIlluminationCalculate and CorrectIlluminationApply to find and remove background areas. Otherwise, you may wish to first run the images through a pixel classification program such as ilastik or Weka Trainable Segmentation to identify the areas where your object is located, and adding the predictions from those programs as a channel in CellProfiler. You may also wish to consider non-classical segmentation modules, such as RunCellpose or RunStarDist."
         },
         "OK (histogram peaks obvious but overlapping)":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You have said the intensity separation between true signal and other areas is only ok; if you are unable to generate reliable thresholding for your areas of interest, you might consider a few options: a) turning on 'Log transform before thresholding?' when thresholding b) using the ImageMath module to raise your image to an exponent >1 (by setting 'Operation' to 'None' and then setting the 'Raise the power of the result by' as needed c) using the EnhanceOrSuppressFeatures module to remove large areas of non-specific intensity d) using CorrectIlluminationCalculate and CorrectIlluminationApply to find and remove background areas."
         },
         "Great (histogram peaks fully distinct)":{
             "cellprofiler_suggester":false

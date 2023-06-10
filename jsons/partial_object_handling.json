@@ -4,22 +4,22 @@
     "full_name":"Should objects touching the border of the image be removed?",
     "select_all":false,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether or not to remove objects that touch the border of the image. This should typically be set to 'Yes' if object sizes and/or total intensities are important; in the case where count is more important, setting to 'No' might be more appropriate",
     "section":"object",
     "changes_based_on_3d":true,
     "options":{
         "Yes":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said objects touching the border should not be thrown out. Ensure that 'Discard objects touching the border of the image?' in IdentifyPrimary Objects is set to 'Yes', and/or throw them out after segmentation with FilterObjects using 'Select the filtering mode' set to 'Image or mask border'",
+                "3D_True":"You said objects touching the border should not be thrown out. Ensure that 'Pixels from the border to exclude' in Watershed is set to '1' or greater if using the advanced Watershed settings, and/or throw them out after segmentation with FilterObjects using 'Select the filtering mode' set to 'Image or mask border'"
             }
         },
         "No":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said objects touching the border should not be thrown out. Ensure that 'Discard objects touching the border of the image?' in IdentifyPrimary Objects is set to 'No'",
+                "3D_True":"You said objects touching the border should not be thrown out. Ensure that 'Pixels from the border to exclude' in Watershed is set to '0' if using the advanced Watershed settings"
             }
         }
     },

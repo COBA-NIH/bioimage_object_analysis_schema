@@ -4,7 +4,7 @@
     "full_name":"Approximately how large is the size range between your biggest and smallest expected objects?",
     "select_all":false,
     "slider":true,
-    "long_description":"",
+    "long_description":"Approximately how large the separation is between the largest expected objects and the smallest expected objects.",
     "section":"object",
     "changes_based_on_3d":true,
     "options":{
@@ -18,22 +18,22 @@
         "Range is +/- 30% to 2-fold":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You have stated there may be a range of object sizes that are 30%-to-2-fold. Typically nothing special is needed under these circumstances, but if your objects are very crowded, setting 'Automatically calculate size of smoothing filter for declumping' and 'Automatically calculate minimum allowed distance between local maxima' to 'No' and tuning the newly exposed settings may help.",
+                "3D_True":"You have stated there may be a range of object sizes that are 30%-to-2-fold. Typically nothing special is needed under these circumstances, but if your objects are very crowded, lightly eroding the Thresholded image with ErodeImage prior to Watershed (often followed by DilateObjects or a second round of Watershed using the first set of objects as seeds) may help."
             }
         },
         "Range is 2-fold to 10-fold":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You have stated there may be a range of object sizes that are 2-to-10-fold. While setting 'Automatically calculate size of smoothing filter for declumping' and 'Automatically calculate minimum allowed distance between local maxima' to 'No' and tuning the newly exposed settings may help, if your objects are very crowded, you may have difficulty segmenting the objects in a single pass; you may wish to run IdentifyPrimaryObjects to identify the largest objects, expand them slightly (typically 2-3 pixels) with ExpandOrShrinkObjects, use MaskImage to mask your identification image with the expanded objects, then run a second pass with IdentifyPrimaryObjects on the masked image. This cycle can be repeated as needed, from the largest to smallest expected objects. The objects found in the various rounds can then be combined into a single object type with CombineObjects.",
+                "3D_True":"You have stated there may be a range of object sizes that are 2-to-10-fold. While lightly eroding the Thresholded image with ErodeImage prior to Watershed (often followed by DilateObjects or a second round of Watershed using the first set of objects as seeds) may help, if your objects are very crowded, you may have difficulty segmenting the objects in a single pass; you may wish to run Threshold and Watershed to identify the largest objects, expand them slightly (typically 2-3 voxels) with DilateObjects, use MaskImage to mask your identification image with the expanded objects, then run a second pass with Threshold and Watershed on the masked image. This cycle can be repeated as needed, from the largest to smallest expected objects. The objects found in the various rounds can then be combined into a single object type with CombineObjects."
             }
         },
         "Range is greater than 10-fold":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You have stated there may be a range of object sizes that are greater than 10-fold. Unless your objects are extremely well separated, you may have difficulty segmenting the objects in a single pass; you may wish to run IdentifyPrimaryObjects to identify the largest objects, expand them slightly (typically 2-3 pixels) with ExpandOrShrinkObjects, use MaskImage to mask your identification image with the expanded objects, then run a second pass with IdentifyPrimaryObjects on the masked image. This cycle can be repeated as needed, from the largest to smallest expected objects. The objects found in the various rounds can then be combined into a single object type with CombineObjects.",
+                "3D_True":"You have stated there may be a range of object sizes that are greater than 10-fold. Unless your objects are extremely well separated, you may have difficulty segmenting the objects in a single pass; you may wish to run Threshold and Watershed to identify the largest objects, expand them slightly (typically 2-3 voxels) with DilateObjects, use MaskImage to mask your identification image with the expanded objects, then run a second pass with Threshold and Watershed on the masked image. This cycle can be repeated as needed, from the largest to smallest expected objects. The objects found in the various rounds can then be combined into a single object type with CombineObjects."
             }
         }
     },

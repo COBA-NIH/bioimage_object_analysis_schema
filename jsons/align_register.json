@@ -4,7 +4,7 @@
     "full_name":"Does alignment and/or registration need to be applied before proceeding?",
     "select_all":false,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether an image needs to be aligned or registered (to other channels, other XY positions, other time points, to a reference atlas, etc) before analysis",
     "section":"image",
     "changes_based_on_3d":true,
     "options":{
@@ -18,15 +18,15 @@
         "Need to align images to other images":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said your image needs to be aligned to another image. If the other image is another channel, this can be easily done with the Align module; if you want to align all images to a master template, this can be done by providing a 'Single image' in NamesAndTypes (see broad.io/CellProfilerInput for more information). Aligning timelapse images to the directly previous frame is not possible without advanced scripting; this is more easily done in another program (such as Fiji) before import into CellProfiler. Aligning tiled images with no tile overlap can be done using the Tile module, though note that this should be performed in a separate pipeline consisting of only one Tile and one SaveImages module per channel, and the resulting tiled image(s) then used in a new pipeline. Aligning or registerig images with overlap is not currently possible and should be done in another program (ie Fiji) before bringing registered images into CellProfiler.",
+                "3D_True":"3D alignment is not currently enabled in CellProfiler; perform alignment in another appropriate tool (such as Fiji) before bringing aligned images into CellProfiler."
             }
         },
         "Need to align images to a reference atlas":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said your image needs to be aligned to a reference atlas. This can be done by providing the reference as a 'Single image' in NamesAndTypes (see broad.io/CellProfilerInput for more information).",
+                "3D_True":"3D alignment is not currently enabled in CellProfiler; perform alignment in another appropriate tool (such as Fiji) before bringing aligned images into CellProfiler."
             }
         }
     },

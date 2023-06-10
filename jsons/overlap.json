@@ -4,7 +4,7 @@
     "full_name":"How much, if any, object overlap is expected?",
     "select_all":false,
     "slider":true,
-    "long_description":"",
+    "long_description":"Whether or not two or more objects are expected to overlap within the same pixel/voxel. This typically can happen in one of two ways - primarily at object boundaries (such as in cell culture cells) or at any point within the object (such as with neurites,worms, or any 3D object with insufficient optical sectioning).",
     "section":"object",
     "changes_based_on_3d":true,
     "options":{
@@ -18,15 +18,15 @@
         "Typically only at the object boundaries":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said that you may expect object overlap at object boundaries. Note that CellProfiler only truly supports object overlap when using the modules from the Worm Toolbox or IdentifyObjectManually. Otherwise, segmentation of touching objects may be challenging; if 3D imaging with optical sectioning is not possible and if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the ecnlosed object first with IdentifyPrimaryObjects and this object with IdentifySecondaryObjects. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)",
+                "3D_True":"You said that you may expect object overlap at object boundaries; since you also said your image is 3D, consider taking thinner Z sections in future experiments, since 3D object 'overlap' is not possible in CellProfiler. Otherwise, segmentation of touching objects may be challenging; if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with Threshold and Watershed and then using these objects as seeds for a second round of Threshold followed by marker-based Watershed. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
             }
         },
         "Overlap can happen anywhere within the object":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said that you may expect object overlap at any point in the object. Note that CellProfiler only truly supports object overlap when using the modules from the Worm Toolbox or IdentifyObjectManually. Otherwise, if 3D imaging with optical sectioning is not possible, automated segmentation may not be feasible in CellProfiler.",
+                "3D_True":"You said that you may expect object overlap at any point in the object; since you also said your image is 3D, consider taking thinner Z sections in future experiments, since 3D object 'overlap' is not possible in CellProfiler. Otherwise, segmentation of touching objects may be challenging; if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with Threshold and Watershed and then using these objects as seeds for a second round of Threshold followed by marker-based Watershed. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
             }
         }
     },

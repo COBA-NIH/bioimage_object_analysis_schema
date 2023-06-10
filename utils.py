@@ -38,7 +38,7 @@ def display_interactive_schema():
     st.write("")
     st.write("#### When analyzing multiple kinds of objects, these set of questions should be independently answered for each object to be segmented.")
     st.write("")
-    st.write("please note that these questions are not finalized and questions and answers may be edited or removed. Last updated April 25th 2023")
+    st.write("Please note that questions and answers may be edited or removed in future versions of the schema. Last updated June 10th 2023")
 
     json_q_dict = load_schema(from_master=True,rewrite_master=False)
     count_list = count_list = list(json_q_dict.keys())
@@ -160,3 +160,7 @@ def make_fig():
             ha="center", va='center',ma="center", size=7, color=text_color,linespacing=1)
             ax.add_artist(wtxt)
     plt.savefig('figure.png',dpi=300,bbox_inches='tight')
+
+#on import of this, which will be on app reboot/rebuild, remake everything to ensure stuff is up to date
+load_schema(from_master=False,rewrite_master=True)
+make_fig()

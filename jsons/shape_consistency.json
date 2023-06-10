@@ -4,15 +4,15 @@
     "full_name":"How much consistency in shape do your objects have?",
     "select_all":false,
     "slider":true,
-    "long_description":"",
+    "long_description":"How consistent objects tend to be with their shape - low, medium, or high",
     "section":"object",
     "changes_based_on_3d":true,
     "options":{
         "Low: shapes can vary widely":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said your object shapes can vary widely; this may make segmentation more challenging if it means diameter also tends to vary widely. If your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with IdentifyPrimaryObjects and this object with IdentifySecondaryObjects. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)",
+                "3D_True":"You said your object shapes can vary widely; this may make segmentation more challenging if it means diameter also tends to vary widely. If your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with Threshold and Watershed and then using these objects as seeds for a second round of Threshold followed by marker-based Watershed. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
             }
         },
         "Medium: shapes are typically similar but not identical":{
@@ -25,7 +25,7 @@
         "High: the shapes are nearly always identical":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
+                "3D_False":"You said your object shapes are nearly always identical; this is ideal. If however your segmentation is otherwise proving challenging, and your object is always in the same orientation, the MatchTemplate module may provide an additional way to help find the objects in your image. MatchTemplate can be tricky to use since it requires an external template image, so it should not be considered an option of first resort.",
                 "3D_True":false
             }
         }

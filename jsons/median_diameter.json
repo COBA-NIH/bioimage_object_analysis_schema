@@ -12,50 +12,50 @@
         "1-3 px":{
             "cellprofiler_suggester":
             {
-                "3D_False":"In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 1-5",
-                "3D_True":false
+                "3D_False":"You said your object is typically 1-3 pixels in diameter. In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 1-5",
+                "3D_True":"You said your object is typically 1-3 pixels in diameter. In Watershed, if using the advanced settings, a good initial guess of 'Minimum distance between seeds' is 1 and 'Minimum absolute internal distance' is 1"
             }
         },
         "3-10 px":{
             "cellprofiler_suggester":
             {
-                "3D_False":"In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 2-8",
-                "3D_True":false
+                "3D_False":"You said your object is typically 3-10 pixels in diameter. In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 2-8",
+                "3D_True":"You said your object is typically 3-10 pixels in diameter. In Watershed, if using the advanced settings, a good initial guess of 'Minimum distance between seeds' is ~2 and 'Minimum absolute internal distance' is ~2, though these numbers may be higher or lower for more variably sized objects"
             }
         },
         "10-30 px":{
             "cellprofiler_suggester":
             {
-                "3D_False":"In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 8-40",
-                "3D_True":false
+                "3D_False":"You said your object is typically 10-30 pixels in diameter. In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 8-40",
+                "3D_True":"You said your object is typically 10-30 pixels in diameter. In Watershed, if using the advanced settings, a good initial guess of 'Minimum distance between seeds' is ~4 and 'Minimum absolute internal distance' is ~10, though these numbers may be higher or lower for more variably sized objects"
             }
         },
         "30-100 px":{
             "cellprofiler_suggester":
             {
-                "3D_False":"In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 25-120",
-                "3D_True":false
+                "3D_False":"You said your object is typically 30-100 pixels in diameter. In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 25-120",
+                "3D_True":"You said your object is typically 30-100 pixels in diameter. In Watershed, if using the advanced settings, a good initial guess of 'Minimum distance between seeds' is ~20 and 'Minimum absolute internal distance' is ~30, though these numbers may be higher for more variably sized objects"
             }
         },
         "100-300 px":{
             "cellprofiler_suggester":
             {
-                "3D_False":"In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 80-350",
-                "3D_True":false
+                "3D_False":"You said your object is typically 100-300 pixels in diameter. In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 80-350",
+                "3D_True":"You said your object is typically 100-300 pixels in diameter. In Watershed, if using the advanced settings, a good initial guess of 'Minimum distance between seeds' is ~60 and 'Minimum absolute internal distance' is ~100, though these numbers may be higher for more variably sized objects"
             }
         },
         "300-1000 px":{
             "cellprofiler_suggester":
             {
-                "3D_False":"In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 250-1200",
-                "3D_True":false
+                "3D_False":"You said your object is typically 300-1000 pixels in diameter. In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 250-1200",
+                "3D_True":"You said your object is typically 300-1000 pixels in diameter. In Watershed, if using the advanced settings, a good initial guess of 'Minimum distance between seeds' is ~200 and 'Minimum absolute internal distance' is ~250, though these numbers may be higher for more variably sized objects. You may find speeds slow at these sizes: consider using a Downsample value of >1."
             }
         },
         "1000-3000 px":{
             "cellprofiler_suggester":
             {
-                "3D_False":"In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 800-3500",
-                "3D_True":false
+                "3D_False":"You said your object is typically 1000-3000 pixels in diameter. In IdentifyPrimaryObjects, a good initial guess of 'Typical Object Diameter' is 800-3500",
+                "3D_True":"You said your object is typically 1000-3000 pixels in diameter. In Watershed, if using the advanced settings, a good initial guess of 'Minimum distance between seeds' is ~600 and 'Minimum absolute internal distance' is ~900, though these numbers may be higher for more variably sized objects. You may find speeds slow at these sizes: consider using a Downsample value of >1."
             }   
         }
     },

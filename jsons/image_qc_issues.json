@@ -4,27 +4,51 @@
     "full_name":"Which if any of the following image quality issues are present? Select all that apply.",
     "select_all":true,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether any of several quality issues and/or artifacts are present in the images.",
     "section":"image",
-    "changes_based_on_3d":false,
+    "changes_based_on_3d":true,
     "options":{
         "Overconfluence":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said your images may contain overconfluence. Crowded and/or overlapping objects may be difficult to directly identify: if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with IdentifyPrimaryObjects and this object with IdentifySecondaryObjects. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)",
+                "3D_True":"You said your images may contain overconfluence. Crowded and/or overlapping objects may be difficult to directly identify: if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first (with Threshold and Watershed) and then using these objects as seeds for a second round of Threshold followed by marker-based Watershed. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
+            }
         },
         "Debris":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said your images may contain debris. You may wish to run IdentifyPrimaryObjects first to identify the debris, expand the debris objects slightly (typically 2-3 pixels) with ExpandOrShrinkObjects, then use MaskImage to mask your identification image with the expanded debris objects. You can then identify your objects as you typically would.",
+                "3D_True":"You said your images may contain debris. You may wish to to run Threshold and Watershed first to identify the debris, expand the debris objects slightly (typically 2-3 voxels) with DilateObjects, then use MaskImage to mask your identification image with the expanded debris objects. You can then identify your objects as you typically would."
+            }
         },
         "Inconsistent focus":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said your images may contain focus issues; while CellProfiler does have a MeasureImageQuality module that can detect some blur metrics, determining the right metric and/or the exact cutoff can sometimes be challenging. If a varied enough group of bad images can be gathered, it may be possible to measure the affected images, then create a classifier in CellProfiler Analyst to detect errors. That classifier can then be brought back into CellProfiler using the FlagImage module.",
+                "3D_True":"You said your images may contain focus issues; while CellProfiler does have a MeasureImageQuality module that can detect some blur metrics, determining the right metric and/or the exact cutoff can sometimes be challenging. If a varied enough group of bad images can be gathered, it may be possible to measure the affected images, then create a classifier in CellProfiler Analyst to detect errors. That classifier can then be brought back into CellProfiler using the FlagImage module."
+            }
         },
         "Variable background":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said your images may have variable background. Using Adaptive thresholding methods may help with correctly thresholding object areas in such cases, though this may not perform well when objects are croweded and thus some areas contain very little background. You can also try using the CorrectIlluminationCalculate module (with 'Select how the illumination function is calculated' set to 'Background' and 'Rescale the illumination function?' set to 'No') and the CorrectIlluminationApply module (with 'Select how the illumination function is applied' set to 'Subtract'); smaller settings in 'Block size' will subtract background more aggressively, but ensure your block size is not so small that blocks contain no background.",
+                "3D_True":"You said your images may have variable background. Using Adaptive thresholding methods may help with correctly thresholding object areas in such cases, though this may not perform well when objects are croweded and thus some areas contain very little background."
+            }
         },
         "Artifacts from tile stitching":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said your images may contain artifacts from tile stitching; unfortunately CellProfiler does not have any easy way to detect or avoid these. If it is not possible to remove such artifacts, and a varied enough group of them can be gathered, it may be possible to measure the affected images and/or objects, then create a classifier in CellProfiler Analyst to detect errors. That classifier can then be brought back into CellProfiler (using the FlagImage module for image classifiers and the FilterObjects module for object classifiers.",
+                "3D_True":"You said your images may contain artifacts from tile stitching; unfortunately CellProfiler does not have any easy way to detect or avoid these. If it is not possible to remove such artifacts, and a varied enough group of them can be gathered, it may be possible to measure the affected images and/or objects, then create a classifier in CellProfiler Analyst to detect errors. That classifier can then be brought back into CellProfiler (using the FlagImage module for image classifiers and the FilterObjects module for object classifiers."
+            }
         },
         "Artifacts from multi-view integration":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":
+            {
+                "3D_False":"You said your images may contain artifacts from multi-view integrattion; unfortunately CellProfiler does not have any easy way to detect or avoid these. If it is not possible to remove such artifacts, and a varied enough group of them can be gathered, it may be possible to measure the affected images and/or objects, then create a classifier in CellProfiler Analyst to detect errors. That classifier can then be brought back into CellProfiler (using the FlagImage module for image classifiers and the FilterObjects module for object classifiers.",
+                "3D_True":"You said your images may contain artifacts from multi-view integrattion; unfortunately CellProfiler does not have any easy way to detect or avoid these. If it is not possible to remove such artifacts, and a varied enough group of them can be gathered, it may be possible to measure the affected images and/or objects, then create a classifier in CellProfiler Analyst to detect errors. That classifier can then be brought back into CellProfiler (using the FlagImage module for image classifiers and the FilterObjects module for object classifiers."
+            }
         }
     },
     "default_option_index":0

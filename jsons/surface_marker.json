@@ -4,15 +4,15 @@
     "full_name":"Is there a marker for the desired object that smoothly covers the whole object?",
     "select_all":false,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether or not there is a whole-surface marker that covers the object's surface. There can be gradations and/or especially bright or dark areas, but the whole surface of the object in the imaging plane is marked.",
     "section":"image",
     "changes_based_on_3d":false,
     "options":{
         "Yes":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You have stated you do have a marker that (at least somewhat) smoothly covers the object's surface. This channel is likely the one you wish to use in IdentifyPrimaryObjects (or IdentifySecondaryObjects) to segment the object."
         },
         "No":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You have stated you do not have a marker that (at least somewhat) smoothly covers the object's surface. Most classical segmentation methods require such a channel; options for creating such a channel might include a) if your object is more highly textured than other areas, using the EnhanceOrSuppressFeatures module in Texture mode to create a pseudo-channel b) if you have a boundary marker, inverting the image in ImageMath (though note that this will require you to mask out non-object areas, so is most appropriate for images with very low background and or objects being created in the IdentifySecondarObjects module or c) using a pixel classification program such as ilastik or Weka Trainable Segmentation first to identify the areas where your object is located, and adding the predictions from those programs as a channel in CellProfiler. You may also wish to consider non-classical segmentation modules, such as RunCellpose or RunStarDist."
         }
     },
     "default_option_index":0

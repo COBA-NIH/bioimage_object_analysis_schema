@@ -4,7 +4,7 @@
     "full_name":"How close will each object typically be to its nearest neighbors of the same object type?",
     "select_all":false,
     "slider":true,
-    "long_description":"",
+    "long_description":"Whether each object will typically be spatially full separated from neighbors, entirely touching neighbors, or something in between",
     "section":"object",
     "changes_based_on_3d":true,
     "options":{
@@ -25,15 +25,15 @@
         "Some touching of neighbors":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said that your objects will be typically be touching their neighbors. If possible, you might consider thresholding your segmentation image with the Threshold module and then running the Opening and/or ErodeImages modules on the thresholded image to try to create a mask that contains only well-separated object centers. You can use this centers image to create an 'ObjectCenter' object in IdentifyPrimaryObjects, then use IdentifySecondaryObjects to expand to the true object boundaries. Otherwise, segmentation of crowded objects may be challenging; if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the ecnlosed object first with IdentifyPrimaryObjects and this object with IdentifySecondaryObjects. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)",
+                "3D_True":"You said that your objects will be typically be touching their neighbors. If possible, you might consider thresholding your segmentation image with the Threshold module and then running the Opening and/or ErodeImages modules on the thresholded image to try to create a mask that contains only well-separated object centers. You can use this centers image to create an 'ObjectCenter' object in Watershed, then use the ObjectCenter as a marker in Watershed to expand to the true object boundaries. Otherwise, segmentation of crowded objects may be challenging; if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with Threshold and Watershed and then using these objects as seeds for a second round of Threshold followed by marker-based Watershed. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
             }
         },
         "Entirely touching neighbors":{
             "cellprofiler_suggester":
             {
-                "3D_False":false,
-                "3D_True":false
+                "3D_False":"You said that your objects will be typically entirely touching their neighbors. Segmentation of such crowded objects may be challenging; if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the ecnlosed object first with IdentifyPrimaryObjects and this object with IdentifySecondaryObjects. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)",
+                "3D_True":"You said that your objects will be typically entirely touching their neighbors. Segmentation of such crowded objects may be challenging; if your objects have a one-to-one relationship with an enclosed or semi-enclosed more-easily-separable object (like cells and nuclei), you should consider identifying the enclosed object first with Threshold and Watershed and then using these objects as seeds for a second round of Threshold followed by marker-based Watershed. Otherwise, you might consider a non-classical segmentation module, such as RunCellpose or RunStarDist (if your object is star-convex)"
             }
         }
     },

@@ -4,12 +4,12 @@
     "full_name":"Is there a marker for the desired object that specifically highlights its edges?",
     "select_all":false,
     "slider":false,
-    "long_description":"",
+    "long_description":"Whether or not there is a marker specifically for the edge of the objects",
     "section":"image",
     "changes_based_on_3d":false,
     "options":{
         "Yes":{
-            "cellprofiler_suggester":false
+            "cellprofiler_suggester":"You said you have an image that has an edge marker for the objects in question. If segmentation proves otherwise challenging, you could consider thresholding the edge marker image with the Threshold module, then running MaskImage with 'Invert the Mask?' set to 'Yes' to remove any boundary-positive areas from the image you planned to use for segmentation. This can sometimes help when objects are very crowded. An inverted edge image can also sometimes be used as an image to find the objects, if ways can be found to identify and mask out any areas of the image that are background."
         },
         "No":{
             "cellprofiler_suggester":false
