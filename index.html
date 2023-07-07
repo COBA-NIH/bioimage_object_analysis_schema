@@ -251,7 +251,7 @@ import sys
 import streamlit as st
 
 sys.path.append('..')
-from bioimage_object_analysis_schema.utils import load_schema
+from utils import load_schema
 
 json_q_dict = load_schema(from_master=True,rewrite_master=False)
 
@@ -281,7 +281,7 @@ import sys
 import streamlit as st
 
 sys.path.append('..')
-from bioimage_object_analysis_schema.utils import display_interactive_schema
+from utils import display_interactive_schema
 
 
 json_q_dict,setting_dict,is_3D = display_interactive_schema()
@@ -294,7 +294,7 @@ import sys
 import streamlit as st
 
 sys.path.append('..')
-from bioimage_object_analysis_schema.utils import display_interactive_schema
+from utils import display_interactive_schema
 
 
 json_q_dict,setting_dict,is_3D = display_interactive_schema()
