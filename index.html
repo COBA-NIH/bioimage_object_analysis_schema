@@ -52,7 +52,7 @@ This website is associated with the paper "The Twenty Questions of Bioimage Obje
 This schema is currently under development; stay tuned for more updates.
 Previous versions of this schema are currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
 
-Last updated - June 10, 2023
+Last updated - July 7, 2023
 
 App made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open Bioimage Analysis
 
@@ -115,7 +115,7 @@ def display_interactive_schema():
     st.write("")
     st.write("#### When analyzing multiple kinds of objects, these set of questions should be independently answered for each object to be segmented.")
     st.write("")
-    st.write("Please note that questions and answers may be edited or removed in future versions of the schema. Last updated June 10th 2023")
+    st.write("Please note that questions and answers may be edited or removed in future versions of the schema. Last updated July 7th 2023")
 
     json_q_dict = load_schema(from_master=True,rewrite_master=False)
     count_list = count_list = list(json_q_dict.keys())
@@ -257,7 +257,7 @@ json_q_dict = load_schema(from_master=True,rewrite_master=False)
 """
 # Explanation of each of the question in the schema
 
-Please note that questions and answers may be edited or removed in future versions of the schema. Last updated June 10th 2023
+Please note that questions and answers may be edited or removed in future versions of the schema. Last updated July 7th 2023
 """
 
 for _,values in json_q_dict.items():
@@ -326,7 +326,7 @@ def follow_answer_tree(json_q_dict,eachkey,setting_dict,is_3D):
 
 See below for pipeline suggestions based on the answers to your questions. Note that some "best-case-scenario answers" where therefore no special handling is needed will not generate suggestions, so the number of suggestions may not match the number of questions.
 
-Last updated June 10 2023
+Last updated July 7 2023
 """
 
 """
