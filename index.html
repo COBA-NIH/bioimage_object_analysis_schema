@@ -44,6 +44,13 @@ stlite.mount(
         url: "https://raw.githubusercontent.com/COBA-NIH/bioimage_object_analysis_schema/main/bioimage_object_analysis_questions.csv",
       },
       "Home.py": `
+import json
+import streamlit as st
+
+from utils import load_schema
+
+load_schema(from_master=True,rewrite_master=False)
+
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
 
@@ -62,12 +69,6 @@ App made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open B
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7654937.svg)](https://doi.org/10.5281/zenodo.7654937) (Original schema DOI)
 """
-import json
-import streamlit as st
-
-from utils import load_schema
-
-load_schema(from_master=True,rewrite_master=False)
 
 st.write(json.load(open('bioimage_object_analysis_questions.json')))
 
