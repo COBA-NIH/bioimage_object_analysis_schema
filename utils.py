@@ -38,7 +38,7 @@ def display_interactive_schema():
     st.write("")
     st.write("#### When analyzing multiple kinds of objects, these set of questions should be independently answered for each object to be segmented.")
     st.write("")
-    st.write("Please note that questions and answers may be edited or removed in future versions of the schema. Last updated June 10th 2023")
+    st.write("Please note that questions and answers may be edited or removed in future versions of the schema. Last updated July 11th 2023")
 
     json_q_dict = load_schema(from_master=True,rewrite_master=False)
     count_list = count_list = list(json_q_dict.keys())

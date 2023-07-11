@@ -20,8 +20,9 @@ This website is associated with the paper "The Twenty Questions of Bioimage Obje
 
 This schema is currently under development; stay tuned for more updates.
 Previous versions of this schema are currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
+Read the associated paper [here](https://rdcu.be/dgAYI)
 
-Last updated - June 10, 2023
+Last updated - July 11, 2023
 
 App made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open Bioimage Analysis
 
