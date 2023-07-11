@@ -16,11 +16,10 @@ Embedded in a webpage at BOAQ.org, thanks to https://giswqs.medium.com/add-a-cus
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
 
-This website is associated with the paper "The Twenty Questions of Bioimage Object Analysis" by Beth A. Cimini and Kevin W. Eliceiri, currently under revision at Nature Methods.
+This website is associated with the paper "The Twenty Questions of Bioimage Object Analysis" by Beth A. Cimini and Kevin W. Eliceiri, available at Nature Methods [here](https://rdcu.be/dgAYI).
 
 This schema is currently under development; stay tuned for more updates.
 Previous versions of this schema are currently best found on [Zenodo](https://doi.org/10.5281/zenodo.7654937)
-Read the associated paper [here](https://rdcu.be/dgAYI)
 
 Last updated - July 11, 2023
 
