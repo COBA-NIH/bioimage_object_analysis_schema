@@ -12,6 +12,9 @@ Pages
 It's all just tiny text files so it should be fine, but if need to cache- https://docs.streamlit.io/library/api-reference/performance/st.cache_data
 Embedded in a webpage at BOAQ.org, thanks to https://giswqs.medium.com/add-a-custom-domain-to-your-streamlit-web-app-daed6d11dd72
 """
+import streamlit as st
+
+st.set_page_config(layout='wide')
 
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
@@ -32,7 +35,6 @@ App made by Beth Cimini, Broad Institute, 2023, as part of the Center for Open B
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7654937.svg)](https://doi.org/10.5281/zenodo.7654937) (Original schema DOI)
 """
 import json
-import streamlit as st
 
 from utils import load_schema
 
