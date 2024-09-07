@@ -4,7 +4,7 @@ import sys
 
 import streamlit as st
 
-st.set_page_config(page_title='Bioimage Object Analysis Questions - BOAQ')
+st.set_page_config(page_title='Bioimage Object Analysis Questions - BOAQ - Schema Definitions')
 
 sys.path.append('..')
 from bioimage_object_analysis_schema.utils import load_schema
