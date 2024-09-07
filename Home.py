@@ -7,12 +7,12 @@ Current analytics approach thanks to https://discuss.streamlit.io/t/google-analy
 import streamlit as st
 import streamlit.components.v1 as components
 
+st.set_page_config(layout='wide')
+
 # Include Google Analytics tracking code
 with open("google_analytics.html", "r") as f:
     html_code = f.read()
     components.html(html_code, height=0)
-
-st.set_page_config(layout='wide')
 
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
