@@ -10,7 +10,7 @@ from bioimage_object_analysis_schema.utils import display_interactive_schema
 
 
 # Include Google Analytics tracking code
-with open("../google_analytics.html", "r") as f:
+with open("google_analytics.html", "r") as f:
     html_code = f.read()
     components.html(html_code, height=0)
 
