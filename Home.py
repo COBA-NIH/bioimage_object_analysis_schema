@@ -6,7 +6,7 @@ Current analytics approach thanks to https://discuss.streamlit.io/t/google-analy
 """
 import streamlit as st
 
-st.set_page_config(layout='wide')
+st.set_page_config(layout='wide', page_title='Bioimage Object Analysis Questions - BOAQ')
 
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
