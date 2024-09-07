@@ -8,7 +8,6 @@ import streamlit as st
 
 st.set_page_config(layout='wide')
 
-
 """
 # Welcome to the home page for the "Twenty Questions of Bioimage Object Analysis" project!
 
